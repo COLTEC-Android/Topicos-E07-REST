@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">E07-REST</string>
+    <string name="string_txt_text_view">Qual usuário deseja pesquisar?</string>
+    <string name="string_hint_edit_text">Usuário</string>
+    <string name="string_txt_button">BUSCAR</string>
+    <string name="string_txt_toast_failure">Erro durante requisição!</string>
+    <string name="string_txt_toast_failure_user">Erro durante requisição de usuário!</string>
+    <string name="string_txt_toast_response">Requisição realizada com sucesso!</string>
+    <string name="string_txt_name">Nome</string>
+    <string name="string_txt_login">Login</string>
+    <string name="string_txt_company">Empresa</string>
+    <string name="string_txt_blog">Blog</string>
+    <string name="string_txt_location">Local</string>
+    <string name="string_txt_email">Email</string>
+    <string name="string_txt_bio">Biografia</string>
+    <string name="string_txt_public_repos">Nº repositórios</string>
+    <string name="string_txt_followers">Nº seguidores</string>
 </resources>

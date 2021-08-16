@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimens_txt_text_view">25sp</dimen>
+    <dimen name="dimens_txt_edit_text">25sp</dimen>
+    <dimen name="dimens_txt_button">25sp</dimen>
+    <dimen name="dimens_padding">20sp</dimen>
+    <dimen name="dimens_txt_usuario_activity">20sp</dimen>
+</resources>
