@@ -74,4 +74,18 @@ public class GitHubUser {
     public void setFollowers(String followers) {
         this.followers = followers;
     }
+
+    @Override
+    public String toString() {
+        return "GitHubUser{" +
+                "name='" + name + '\'' +
+                ", login='" + login + '\'' +
+                ", company='" + company + '\'' +
+                ", blog='" + blog + '\'' +
+                ", location='" + location + '\'' +
+                ", email='" + email + '\'' +
+                ", bio='" + bio + '\'' +
+                ", followers='" + followers + '\'' +
+                '}';
+    }
 }

@@ -9,4 +9,6 @@ public interface GitHubUserService {
 
     @GET("{userName}/json")
     public Call<GitHubUser> getUser(@Path("userName") String userName);
+
+
 }

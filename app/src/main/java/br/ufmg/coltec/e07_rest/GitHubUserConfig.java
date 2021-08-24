@@ -18,6 +18,11 @@ public class GitHubUserConfig {
 
     }
 
+    // criando método para retornar uma instância completa do service da interface GitHubUserService
+    public GitHubUserService getGitHubUserService() {
+        return  this.retrofit.create(GitHubUserService.class);
+    }
+
     public Retrofit getRetrofit() {
         return retrofit;
     }
