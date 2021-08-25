@@ -32,40 +32,37 @@ public class MainActivity extends AppCompatActivity {
         TextView lblFollowers = this.findViewById(R.id.lbl_followers);
         TextView lblLocation = this.findViewById(R.id.lbl_location);
 
-        btnSearch.setOnClickListener(new View.OnClickListener() {
+        btnSearch.setOnClickListener(view ->  {
             String userName = inputUserName.getText().toString();
 
-            @Override
-            public void onClick(View view) {
-                GitHubUserService gitHubUserService = new GitHubUserConfig()
-                        .getGitHubUserService();
-                Call<GitHubUser> gitHubUserCall = gitHubUserService.getUser(userName);
+            GitHubUserService gitHubUserService = new GitHubUserConfig()
+                    .getGitHubUserService();
+            Call<GitHubUser> gitHubUserCall = gitHubUserService.getUser(userName);
 
-                gitHubUserCall.enqueue(new Callback<GitHubUser>() {
-                    @Override
-                    public void onResponse(Call<GitHubUser> call, Response<GitHubUser> response) {
-                        // sucesso
-                        Toast.makeText(MainActivity.this, "Sucesso", Toast.LENGTH_SHORT).show();
+            gitHubUserCall.enqueue(new Callback<GitHubUser>() {
+                @Override
+                public void onResponse(Call<GitHubUser> call, Response<GitHubUser> response) {
+                    // sucesso
+                    Toast.makeText(MainActivity.this, "Sucesso", Toast.LENGTH_SHORT).show();
 
-                        // recuperando dados da requisição
-                        GitHubUser gitHubUser = response.body();
+                    // recuperando dados da requisição
+                    GitHubUser gitHubUser = response.body();
 
-                        lblName.setText(gitHubUser.getName());
-                        lblLogin.setText(gitHubUser.getLogin());
-                        lblBio.setText(gitHubUser.getBio());
-                        lblBlog.setText(gitHubUser.getBlog());
-                        lblCompany.setText(gitHubUser.getCompany());
-                        lblLocation.setText(gitHubUser.getLocation());
-                        lblFollowers.setText(gitHubUser.getFollowers());
-                    }
+                    lblName.setText(gitHubUser.getName());
+                    lblLogin.setText(gitHubUser.getLogin());
+                    lblBio.setText(gitHubUser.getBio());
+                    lblBlog.setText(gitHubUser.getBlog());
+                    lblCompany.setText(gitHubUser.getCompany());
+                    lblLocation.setText(gitHubUser.getLocation());
+                    lblFollowers.setText(gitHubUser.getFollowers());
+                }
 
-                    @Override
-                    public void onFailure(Call<GitHubUser> call, Throwable t) {
-                        // falha
-                        Toast.makeText(MainActivity.this, "Erro", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
+                @Override
+                public void onFailure(Call<GitHubUser> call, Throwable t) {
+                    // falha
+                    Toast.makeText(MainActivity.this, "Erro", Toast.LENGTH_SHORT).show();
+                }
+            });
         });
     }
 }

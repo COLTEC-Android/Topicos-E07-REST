@@ -12,7 +12,7 @@ public class GitHubUserConfig {
 
         // configurando o retrofit para um determinado serviço
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
+                .baseUrl("https://api.github.com/users/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
