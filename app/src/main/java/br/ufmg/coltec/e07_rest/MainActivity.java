@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnSearch.setOnClickListener(view ->  {
             String userName = inputUserName.getText().toString();
-
             GitHubUserService gitHubUserService = new GitHubUserConfig()
                     .getGitHubUserService();
             Call<GitHubUser> gitHubUserCall = gitHubUserService.getUser(userName);
