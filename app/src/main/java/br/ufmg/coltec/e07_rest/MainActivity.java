@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class
+MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
                     User user = response.body();
-                    Intent intent = new Intent(MainActivity.this, UserActivity.class);
-                    intent.putExtra("user", user);
-                    startActivity(intent);
+                    if(user == null){
+                        Toast.makeText(MainActivity.this, "Usuario Inválido", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Intent intent = new Intent(MainActivity.this, UserActivity.class);
+                        intent.putExtra("user", user);
+                        startActivity(intent);
+                    }
                 }
 
                 @Override
